@@ -61,6 +61,12 @@
           </v-list-tile-action>
           <v-list-tile-title>Switch theme (dark/light)</v-list-tile-title>
         </v-list-tile>
+        <v-list-tile @click="question">
+          <v-list-tile-action>
+            <v-icon light>people</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-title>Dev_Question</v-list-tile-title>
+        </v-list-tile>
         <v-list-tile>
           <v-list-tile-action>
             <v-icon light>person_outline</v-icon>
@@ -69,6 +75,9 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
+
+    <QuestionModal ref="modal"/>
+
     <v-footer
       :fixed="fixed"
       app>
@@ -85,7 +94,11 @@
 </template>
 
 <script>
+import QuestionModal from '../components/QuestionModal'
 export default {
+  components: {
+    QuestionModal
+  },
   data() {
     return {
       title: 'DDIng Conference App',
@@ -96,8 +109,6 @@ export default {
       miniVariant: false,
       items: [
         { icon: 'apps', title: 'Welcome', to: '/' },
-        { icon: 'bubble_chart', title: 'Inspire', to: '/inspire' },
-        { icon: 'pan_tool', title: 'Agenda', to: '/agenda' },
         {
           icon: 'supervised_user_circle',
           title: 'Join to Event',
@@ -110,6 +121,11 @@ export default {
   computed: {
     thisYear: function() {
       return new Date().getFullYear()
+    }
+  },
+  methods: {
+    question() {
+      this.$refs.modal.show()
     }
   }
 }
