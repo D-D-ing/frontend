@@ -97,7 +97,12 @@ export default {
       items: [
         { icon: 'apps', title: 'Welcome', to: '/' },
         { icon: 'bubble_chart', title: 'Inspire', to: '/inspire' },
-        { icon: 'pan_tool', title: 'Agenda', to: '/agenda' }
+        { icon: 'pan_tool', title: 'Agenda', to: '/agenda' },
+        {
+          icon: 'supervised_user_circle',
+          title: 'Join to Event',
+          to: '/client'
+        }
       ],
       rightDrawer: false
     }
