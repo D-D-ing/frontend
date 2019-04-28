@@ -6,7 +6,7 @@
         alt="Vuetify.js"
         class="mb-5">
       <blockquote class="blockquote">
-        &#8220;Erst wenn die Agenda steht, kann man auc richtig feiern!&#8221;
+        &#8220;Erst wenn die Agenda steht, kann man auch richtig feiern!&#8221;
         <footer>
           <small>
             <em>&mdash;Willi Meierhof</em>
