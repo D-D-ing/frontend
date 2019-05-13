@@ -109,6 +109,9 @@ export default {
       miniVariant: false,
       items: [
         { icon: 'apps', title: 'Welcome', to: '/' },
+        { icon: 'bubble_chart', title: 'Inspire', to: '/inspire' },
+        { icon: 'pan_tool', title: 'Agenda', to: '/agenda' },
+        { icon: 'cloud_circle', title: 'Feedback', to: '/feedback' },
         {
           icon: 'supervised_user_circle',
           title: 'Join to Event',

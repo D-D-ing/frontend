@@ -14,10 +14,15 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@nuxtjs/apollo": "^4.0.0-rc4",
+    "@nuxtjs/axios": "^5.0.0",
     "cross-env": "^5.2.0",
+    "graphql-tag": "^2.10.1",
     "nuxt": "^2.0.0",
-    "vuetify": "^1.2.4",
-    "@nuxtjs/axios": "^5.0.0"
+    "vue": "^2.6.10",
+    "vue-server-renderer": "^2.6.6",
+    "vue-template-compiler": "^2.6.10",
+    "vuetify": "^1.2.4"
   },
   "devDependencies": {
     "nodemon": "^1.11.0",
