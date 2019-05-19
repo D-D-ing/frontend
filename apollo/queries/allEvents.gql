@@ -1,0 +1,6 @@
+{
+  allEvents {
+    name
+    accessToken
+  }
+}

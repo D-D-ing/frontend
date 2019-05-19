@@ -1,0 +1,14 @@
+query GetEventByAccessToken($token: String!) {
+  getEventByAccessToken(accessToken: $token) {
+    id
+    name
+    accessToken
+    description
+    interactions {
+      id
+      name
+      text
+      type
+    }
+  }
+}

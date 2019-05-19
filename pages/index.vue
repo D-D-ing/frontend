@@ -7,6 +7,18 @@
       xs12
       sm8
       md6>
+      <div>
+        <h1>Events</h1>
+        <ul>
+          <li
+            v-for="event in allEvents"
+            :key="event.id">
+            <NuxtLink :to="`liveevent/${event.accessToken}`">
+              {{ event.name }}
+            </NuxtLink>
+          </li>
+        </ul>
+      </div>
       <div class="text-xs-center">
         <logo/>
         <vuetify-logo/>
@@ -55,8 +67,13 @@
 <script>
 import Logo from '~/components/Logo.vue'
 import VuetifyLogo from '~/components/VuetifyLogo.vue'
-
+import allEvents from '~/apollo/queries/allEvents'
 export default {
+  apollo: {
+    allEvents: {
+      query: allEvents
+    }
+  },
   components: {
     Logo,
     VuetifyLogo

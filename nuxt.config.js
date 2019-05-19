@@ -72,7 +72,7 @@ module.exports = {
     clientConfigs: {
       default: {
         // required
-        httpEndpoint: 'http://localhost:3000',
+        httpEndpoint: 'http://localhost:4000/api',
         // optional
         // See https://www.apollographql.com/docs/link/links/http.html#options
         httpLinkOptions: {
@@ -80,7 +80,7 @@ module.exports = {
         },
         // You can use `wss` for secure connection (recommended in production)
         // Use `null` to disable subscriptions
-        wsEndpoint: 'ws://localhost:3000', // optional
+        //wsEndpoint: 'ws://localhost:4000/api', // optional
         // LocalStorage token
         tokenName: 'apollo-token', // optional
         // Enable Automatic Query persisting with Apollo Engine
