@@ -44,6 +44,7 @@
 //import Slides from './Slides'
 
 export default {
+  layout: 'inside',
   name: 'Client',
   //components: {
   // Slides

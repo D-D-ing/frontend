@@ -16,3 +16,9 @@
     </v-flex>
   </v-layout>
 </template>
+
+<script>
+export default {
+  layout: 'inside'
+}
+</script>

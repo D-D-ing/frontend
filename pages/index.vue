@@ -7,24 +7,12 @@
       xs12
       sm8
       md6>
-      <div>
-        <h1>Events</h1>
-        <ul>
-          <li
-            v-for="event in allEvents"
-            :key="event.id">
-            <NuxtLink :to="`liveevent/${event.accessToken}`">
-              {{ event.name }}
-            </NuxtLink>
-          </li>
-        </ul>
-      </div>
       <div class="text-xs-center">
         <logo/>
         <vuetify-logo/>
       </div>
       <v-card>
-        <v-card-title class="headline">Welcome to the Vuetify + Nuxt.js template</v-card-title>
+        <v-card-title class="headline">Welcome to the DD.Ing conference App</v-card-title>
         <v-card-text>
           <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
           <p>For more information on Vuetify, check out the <a
@@ -51,14 +39,6 @@
             href="https://github.com/nuxt/nuxt.js"
             target="_blank">Nuxt GitHub</a>
         </v-card-text>
-        <v-card-actions>
-          <v-spacer/>
-          <v-btn
-            color="primary"
-            flat
-            nuxt
-            to="/inspire">Continue</v-btn>
-        </v-card-actions>
       </v-card>
     </v-flex>
   </v-layout>
@@ -67,13 +47,8 @@
 <script>
 import Logo from '~/components/Logo.vue'
 import VuetifyLogo from '~/components/VuetifyLogo.vue'
-import allEvents from '~/apollo/queries/allEvents'
 export default {
-  apollo: {
-    allEvents: {
-      query: allEvents
-    }
-  },
+  layout: 'outside',
   components: {
     Logo,
     VuetifyLogo

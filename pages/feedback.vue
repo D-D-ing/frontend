@@ -1,8 +1,8 @@
 <template>
-  <v-container 
+  <v-container
     grid-list-md
     text-xs-center>
-    <v-layout 
+    <v-layout
       row
       wrap>
       <v-flex xs12>
@@ -25,3 +25,9 @@
     </v-layout>
   </v-container>
 </template>
+
+<script>
+export default {
+  layout: 'inside'
+}
+</script>

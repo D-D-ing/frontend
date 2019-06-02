@@ -55,6 +55,7 @@ import Slides from '../../../../components/Slides'
 import InteractModal from '../../../../components/InteractModal'
 
 export default {
+  layout: 'inside',
   name: 'Index',
   components: {
     Slides,

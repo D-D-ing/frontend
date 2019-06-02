@@ -107,16 +107,18 @@ export default {
       clipped: true,
       fixed: true,
       miniVariant: false,
+      right: false,
       items: [
-        { icon: 'apps', title: 'Welcome', to: '/' },
-        { icon: 'bubble_chart', title: 'Inspire', to: '/inspire' },
+        { icon: 'apps', title: 'Events', to: '/events' },
         { icon: 'pan_tool', title: 'Agenda', to: '/agenda' },
         { icon: 'cloud_circle', title: 'Feedback', to: '/feedback' },
         {
           icon: 'supervised_user_circle',
           title: 'Join to Event',
           to: '/client'
-        }
+        },
+        { icon: 'cloud_circle', title: 'Profile', to: '/user_profile' },
+        { icon: 'bubble_chart', title: 'Log Out', to: '/logout' }
       ],
       rightDrawer: false
     }
@@ -124,6 +126,11 @@ export default {
   computed: {
     thisYear: function() {
       return new Date().getFullYear()
+    }
+  },
+  created() {
+    if (!this.$store.state.auth.user) {
+      this.$router.push('/')
     }
   },
   methods: {

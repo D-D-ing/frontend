@@ -18,6 +18,7 @@
 import GetEventByAccessToken from '~/apollo/queries/getEventByAccessToken'
 
 export default {
+  layout: 'inside',
   data() {
     return {
       getEventByAccessToken: {},
