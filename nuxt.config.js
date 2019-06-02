@@ -72,7 +72,7 @@ module.exports = {
     clientConfigs: {
       default: {
         // required
-        httpEndpoint: 'http://localhost:4000/api',
+        httpEndpoint: 'http://localhost:4000/api/graphql',
         // optional
         // See https://www.apollographql.com/docs/link/links/http.html#options
         httpLinkOptions: {
