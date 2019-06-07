@@ -1,0 +1,8 @@
+{
+  myUser {
+    name
+    username
+    token
+    email
+  }
+}
