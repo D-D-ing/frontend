@@ -32,6 +32,7 @@ export const actions = {
     return api.auth.login(data).then(response => {
       setAuthToken(response.data.token)
       commit('set_user', response.data.user)
+      this.$apolloHelpers.onLogin(response.data.token)
       cookies.set('bearer-token', response.data.token, { expires: 7 })
       return response
     })
@@ -39,6 +40,7 @@ export const actions = {
   reset({ commit }) {
     commit('reset_user')
     resetAuthToken()
+    this.$apolloHelpers.onLogout()
     cookies.remove('bearer-token')
     return Promise.resolve()
   }

@@ -50,10 +50,10 @@ module.exports = {
   ** Apollo module configuration
   */
   apollo: {
-    tokenName: 'Frontend_Apollo_Token', // optional, default: apollo-token
-    tokenExpires: 10, // optional, default: 7 (days)
-    includeNodeModules: true, // optional, default: false (this includes graphql-tag for node_modules folder)
-    authenticationType: 'Basic', // optional, default: 'Bearer'
+    tokenName: 'bearer-token', // optional, default: apollo-token
+    // tokenExpires: 10, // optional, default: 7 (days)
+    // includeNodeModules: true, // optional, default: false (this includes graphql-tag for node_modules folder)
+    authenticationType: 'Bearer', // optional, default: 'Bearer'
     // optional
     errorHandler(error) {
       console.log(
@@ -69,14 +69,14 @@ module.exports = {
         httpEndpoint: 'http://localhost:4000/api/graphql',
         // optional
         // See https://www.apollographql.com/docs/link/links/http.html#options
-        httpLinkOptions: {
-          credentials: 'same-origin'
-        },
+        //httpLinkOptions: {
+        //  credentials: 'include'
+        //},
         // You can use `wss` for secure connection (recommended in production)
         // Use `null` to disable subscriptions
         //wsEndpoint: 'ws://localhost:4000/api', // optional
         // LocalStorage token
-        tokenName: 'apollo-token', // optional
+        tokenName: 'bearer-token', // optional
         // Enable Automatic Query persisting with Apollo Engine
         persisting: false, // Optional
         // Use websockets for everything (no HTTP)
