@@ -129,7 +129,8 @@ export default {
     }
   },
   created() {
-    if (!this.$store.state.auth.user) {
+    this.$store.dispatch('auth/isLoggedIn')
+    if (!this.$store.state.auth.token) {
       this.$router.push('/')
     }
   },

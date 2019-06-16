@@ -3,7 +3,8 @@ import { setAuthToken, resetAuthToken } from '~/utils/auth'
 import cookies from 'js-cookie'
 
 export const state = () => ({
-  user: null
+  user: null,
+  token: null
 })
 
 export const mutations = {
@@ -12,6 +13,12 @@ export const mutations = {
   },
   reset_user(store) {
     store.user = null
+  },
+  set_token(store, data) {
+    store.token = data
+  },
+  reset_token(store, data) {
+    store.token = null
   }
 }
 
@@ -27,6 +34,16 @@ export const actions = {
         commit('reset_user')
         return error
       })
+  },
+  gqlLogin({ commit }, token) {
+    commit('set_token', token)
+    this.$apolloHelpers.onLogin(token)
+    //cookies.set('bearer-token', token)
+  },
+  isLoggedIn({ commit }) {
+    if (cookies.get('bearer-token')) {
+      commit('set_token', cookies.get('bearer-token'))
+    }
   },
   login({ commit }, data) {
     return api.auth.login(data).then(response => {

@@ -1,4 +1,5 @@
 const pkg = require('./package')
+const path = require('path')
 
 module.exports = {
   mode: 'spa',
@@ -103,5 +104,8 @@ module.exports = {
         })
       }
     }
+  },
+  generate: {
+    dir: path.resolve(__dirname, '../conferenceapp/phoenix-events-live/priv/static')
   }
 }
