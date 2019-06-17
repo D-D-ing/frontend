@@ -12,18 +12,10 @@
 import myUser from '~/apollo/queries/myUser'
 export default {
   layout: 'inside',
-  computed: {
-    user() {
-      return (this.$store.state.auth || {}).user || null
-    }
-  },
   apollo: {
     myUser: {
       query: myUser
     }
-  },
-  created() {
-    this.$store.dispatch('auth/fetch')
   }
 }
 </script>

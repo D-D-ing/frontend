@@ -37,7 +37,7 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: ['@/plugins/vuetify', '~/api/init.js'],
+  plugins: ['@/plugins/vuetify'],
 
   /*
   ** Nuxt.js modules
@@ -104,8 +104,5 @@ module.exports = {
         })
       }
     }
-  },
-  generate: {
-    dir: path.resolve(__dirname, '../conferenceapp/phoenix-events-live/priv/static')
   }
 }

@@ -7,7 +7,7 @@
       style="flex: 0 1 400px">
       <v-card-title class="headline">Log In</v-card-title>
       <v-card-text>
-        <v-form @submit.prevent="submitGQL">
+        <v-form @submit.prevent="submit">
           <v-alert
             v-if="alert"
             :type="alert.type"
@@ -42,10 +42,8 @@ export default {
     }
   },
   methods: {
-    async submitGQL() {
+    async submit() {
       this.alert = null
-      console.log(this.username)
-      console.log(this.password)
       try {
         const res = await this.$apollo.query({
           query: SignIn,
@@ -55,14 +53,15 @@ export default {
             password: this.password
           }
         })
-        console.log(res.data.signIn.token)
         this.alert = {
           type: 'success',
           message: 'login successful'
         }
         this.loading = false
-        this.$store.dispatch('auth/gqlLogin', res.data.signIn.token)
-        this.$router.push('/events')
+        this.$store.dispatch('auth/login', res.data.signIn.token)
+        setTimeout(() => {
+          this.$router.push('/events')
+        }, 1000)
       } catch (e) {
         this.loading = false
         this.alert = {
@@ -70,32 +69,6 @@ export default {
           message: 'Error while logging in.'
         }
       }
-    },
-    submit() {
-      this.alert = null
-      this.loading = true
-      this.$store
-        .dispatch('auth/login', {
-          username: this.username,
-          password: this.password
-        })
-        .then(result => {
-          this.alert = {
-            type: 'success',
-            message: result.data.message
-          }
-          this.loading = false
-          this.$router.push('/events')
-        })
-        .catch(error => {
-          this.loading = false
-          if (error.response && error.response.data) {
-            this.alert = {
-              type: 'error',
-              message: error.response.data.message || error.reponse.status
-            }
-          }
-        })
     }
   }
 }
