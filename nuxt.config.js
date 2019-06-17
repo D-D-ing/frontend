@@ -1,5 +1,4 @@
 const pkg = require('./package')
-const path = require('path')
 
 module.exports = {
   mode: 'spa',
