@@ -23,7 +23,8 @@ export default {
   layout: 'inside',
   apollo: {
     allEvents: {
-      query: allEvents
+      query: allEvents,
+      fetchPolicy: 'network-only'
     }
   },
   components: {
