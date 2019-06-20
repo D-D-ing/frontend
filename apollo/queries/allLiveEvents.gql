@@ -1,5 +1,5 @@
 {
-  allEvents {
+  allLiveEvents {
     name
     accessToken
   }

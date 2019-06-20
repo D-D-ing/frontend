@@ -60,7 +60,7 @@ export default {
         this.loading = false
         this.$store.dispatch('auth/login', res.data.signIn.token)
         setTimeout(() => {
-          this.$router.push('/events')
+          this.$router.push('/live_events')
         }, 1000)
       } catch (e) {
         this.loading = false

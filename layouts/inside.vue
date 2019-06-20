@@ -109,7 +109,7 @@ export default {
       miniVariant: false,
       right: false,
       items: [
-        { icon: 'apps', title: 'Events', to: '/events' },
+        { icon: 'apps', title: 'Live Events', to: '/live_events' },
         { icon: 'pan_tool', title: 'Agenda', to: '/agenda' },
         { icon: 'cloud_circle', title: 'Feedback', to: '/feedback' },
         {

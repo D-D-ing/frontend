@@ -1,11 +1,11 @@
 <template>
   <div>
-    <h1>{{ getEventByAccessToken.name }}</h1>
-    {{ getEventByAccessToken.description }}
+    <h1>{{ getLiveEventByAccessToken.name }}</h1>
+    {{ getLiveEventByAccessToken.description }}
     <h2>Interactions</h2>
     <ul>
       <li
-        v-for="interaction in getEventByAccessToken.interactions"
+        v-for="interaction in getLiveEventByAccessToken.interactions"
         :key="interaction.id">
         <p>{{ interaction.name }}</p>
         <p>{{ interaction.text }}</p>
@@ -15,19 +15,19 @@
 </template>
 
 <script>
-import GetEventByAccessToken from '~/apollo/queries/getEventByAccessToken'
+import GetLiveEventByAccessToken from '~/apollo/queries/getLiveEventByAccessToken'
 
 export default {
   layout: 'inside',
   data() {
     return {
-      getEventByAccessToken: {},
+      getLiveEventByAccessToken: {},
       accessToken: this.$route.params.token
     }
   },
   apollo: {
-    getEventByAccessToken: {
-      query: GetEventByAccessToken,
+    getLiveEventByAccessToken: {
+      query: GetLiveEventByAccessToken,
       fetchPolicy: 'network-only', // don't used cached values by default
       loadingKey: 'loading',
       variables() {

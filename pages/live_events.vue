@@ -4,10 +4,10 @@
       <h1>Events</h1>
       <ul>
         <li
-          v-for="event in allEvents"
-          :key="event.id">
-          <p><nuxt-link :to="`liveevent/${event.accessToken}`">
-            {{ event.name }}
+          v-for="liveEvent in allLiveEvents"
+          :key="liveEvent.id">
+          <p><nuxt-link :to="`liveevent/${liveEvent.accessToken}`">
+            {{ liveEvent.name }}
           </nuxt-link></p>
         </li>
       </ul>
@@ -18,12 +18,12 @@
 <script>
 import Logo from '~/components/Logo.vue'
 import VuetifyLogo from '~/components/VuetifyLogo.vue'
-import allEvents from '~/apollo/queries/allEvents'
+import allLiveEvents from '~/apollo/queries/allLiveEvents'
 export default {
   layout: 'inside',
   apollo: {
-    allEvents: {
-      query: allEvents,
+    allLiveEvents: {
+      query: allLiveEvents,
       fetchPolicy: 'network-only'
     }
   },

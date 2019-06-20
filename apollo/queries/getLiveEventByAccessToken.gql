@@ -1,5 +1,5 @@
-query GetEventByAccessToken($token: String!) {
-  getEventByAccessToken(accessToken: $token) {
+query GetLiveEventByAccessToken($token: String!) {
+  getLiveEventByAccessToken(accessToken: $token) {
     id
     name
     accessToken
